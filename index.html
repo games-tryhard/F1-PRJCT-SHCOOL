@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>World Clock</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>World Clock</h1>
+    <div class="controls">
+      <select id="presetTz"></select>
+      <input id="customTz" placeholder="Or type IANA timezone (e.g. Europe/Paris)" />
+      <button id="addBtn">Add</button>
+      <label class="toggle">
+        <input type="checkbox" id="hour12Toggle" />
+        12-hour
+      </label>
+      <button id="clearBtn" title="Remove all">Clear</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <div id="clocks" class="grid"></div>
+  </main>
+
+  <footer class="footer">
+    <small>Times use browser locale and Intl API (handles DST). Saved to this browser only.</small>
+  </footer>
+
+  <template id="clock-template">
+    <article class="clock-card">
+      <div class="clock-head">
+        <h2 class="tz-name"></h2>
+        <button class="remove-btn" title="Remove">✕</button>
+      </div>
+      <div class="time" aria-live="polite"></div>
+      <div class="date small"></div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
